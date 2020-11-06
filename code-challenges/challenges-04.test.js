@@ -56,7 +56,6 @@ const isCapitalized = (str) => {
 
   let regEx = /([A-Z]\w+)/g;
   let tester = str.match(regEx);
-  console.log('JP', tester);
   if (tester === null) { tester = []; }
   return (tester);
 };
@@ -68,7 +67,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let newCity = [];
+  let regEx = /^[A-J]\w+/g;
+  arr.forEach(element => {
+    let regExResult = element.match(regEx);
+    if (regExResult !== null) { newCity.push(regExResult); }
+  });
+  console.log('JP4:', newCity);
+  return (newCity);
 };
 
 /* ------------------------------------------------------------------------------------------------
