@@ -71,9 +71,8 @@ const citiesAtoJ = (arr) => {
   let regEx = /^[A-J]\w+/g;
   arr.forEach(element => {
     let regExResult = element.match(regEx);
-    if (regExResult !== null) { newCity.push(regExResult); }
+    if (regExResult !== null) { newCity.push(regExResult[0]); }
   });
-  console.log('JP4:', newCity);
   return (newCity);
 };
 
